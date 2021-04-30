@@ -118,7 +118,8 @@ export default {
     text-align: left;
 }
 .item >>> .el-checkbox-button__inner {
-    border: none;
+    border: none!important;
+    border-width: 0;
     white-space: pre-line;
     padding-top: 0;
     padding-bottom: 0;

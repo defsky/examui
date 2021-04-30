@@ -28,7 +28,7 @@
                         </div>
                     </el-card>
                 </el-row>
-                <el-row v-if="completed" class="content-grid">
+                <el-row v-if="completed" class="content-grid-anwser">
                     <el-card class="box-card">
                         <div slot="header" class="question-body">
                             <span>正确答案：{{question.answer}}</span>
@@ -121,7 +121,7 @@ export default {
     text-align: left;
 }
 .item >>> .el-radio-button__inner {
-    border: none;
+    border: none!important;
     white-space: pre-line;
     padding-top: 0;
     padding-bottom: 0;
@@ -132,6 +132,9 @@ export default {
 }
 .item p {
     text-align: left;
+}
+.content-grid-anwser {
+    margin-bottom: 50px;
 }
 
 .footer{
