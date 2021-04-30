@@ -1,16 +1,25 @@
 <template>
     <div>
-        <el-row>
-            <el-col>this is sub2 view</el-col>
-        </el-row>
-        <el-row>
+        <el-page-header @back="goback" content="初级会计经济法">
+        </el-page-header>
+
+        <el-row class="main-grid">
             <el-col>
-                <el-button style="float: right; padding: 3px 0" type="text" @click="goSub1">初级会计实务</el-button>
-            </el-col>
-        </el-row>
-        <el-row>
-            <el-col>
-                <el-button style="float: right; padding: 3px 0" type="text" @click="goSub2">初级会计经济法基础</el-button>
+                <el-row>
+                    <el-col>
+                        <el-button class="nav-btn" type="primary" @click="type1">单项选择题</el-button>
+                    </el-col>
+                </el-row>
+                <el-row>
+                    <el-col>
+                        <el-button class="nav-btn" type="primary" @click="type2">多项选择题</el-button>
+                    </el-col>
+                </el-row>
+                <el-row>
+                    <el-col>
+                        <el-button class="nav-btn" type="primary" @click="type3">判断题</el-button>
+                    </el-col>
+                </el-row>
             </el-col>
         </el-row>
     </div>
@@ -18,12 +27,30 @@
 <script>
 export default {
     methods:{
-        goSub1:function(){
-            this.$router.push({path:'/sub1'})
+        type1:function(){
+            this.$router.push({path:'/sub2/type1'})
         },
-        goSub2:function(){
-            this.$router.push({path:'/sub2'})
+        type2:function(){
+            this.$router.push({path:'/sub2/type2'})
+        },
+        type3:function(){
+            this.$router.push({path:'/sub2/type3'})
+        },
+        goback(){
+            this.$router.push({path:'/'})
         }
     }
 }
 </script>
+<style scoped>
+.el-row {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.main-grid {
+    margin-top: 90px;
+}
+.nav-btn {
+    width: 80%;
+}
+</style>

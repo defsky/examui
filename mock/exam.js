@@ -107,7 +107,34 @@ export default {
     
     return subject1.type1.questions[idx];
   },
-  'get|/exam/2':  option => {
-    return subject2;
-  }
+  'get|/exam/1/2':  option => {
+    let len = subject1.type2.questions.length
+    let idx = Math.round(Math.random() * len);
+    
+    return subject1.type2.questions[idx];
+  },
+  'get|/exam/1/3':  option => {
+    let len = subject1.type3.questions.length
+    let idx = Math.round(Math.random() * len);
+    
+    return subject1.type3.questions[idx];
+  },
+  'get|/exam/2/1':  option => {
+    let len = subject2.type1.questions.length
+    let idx = Math.round(Math.random() * len);
+    
+    return subject2.type1.questions[idx];
+  },
+  'get|/exam/2/2':  option => {
+    let len = subject2.type2.questions.length
+    let idx = Math.round(Math.random() * len);
+    
+    return subject2.type2.questions[idx];
+  },
+  'get|/exam/2/3':  option => {
+    let len = subject2.type3.questions.length
+    let idx = Math.round(Math.random() * len);
+    
+    return subject2.type3.questions[idx];
+  },
 }
