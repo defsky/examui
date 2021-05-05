@@ -11,7 +11,7 @@
                             多项选择题：
                         </div>
                         <div class="tools-btn">
-                            <el-button @click="switchCalc" :icon="calcOpened?'el-icon-open':'el-icon-turn-off'" circle></el-button>
+                            <el-button type="text" @click="switchCalc" circle><i :class="calcOpened?'el-icon-open':'el-icon-turn-off'"></i></el-button>
                         </div>
                     </el-col>
                 </el-row>
@@ -182,5 +182,14 @@ export default {
 }
 .tools-btn{
     float: right;
+}
+.tools-btn .el-button{
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 5px;
+    padding-bottom: 0px;
+    font-size:28px;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: transparent; 
 }
 </style>
