@@ -4,7 +4,7 @@
             <div class="displayInfo">
                 <div class="displayInput">
                     <input type="text" class="displayInputA" disabled v-model="resultInput">
-                    <input type="text" class="displayInputB" autofocus="autofocus" v-model="resultDisplay">
+                    <input type="text" class="displayInputB" v-model="resultDisplay">
                 </div>
                 <div class="promptinfo" v-show="!promptInfoShow"></div>
                 <div class="promptinfo" v-show="promptInfoShow">
