@@ -10,6 +10,9 @@
                         <div class="subtitle">
                             单项选择题：
                         </div>
+                        <div class="tools-btn">
+                            <el-button @click="switchCalc" :icon="calcOpened?'el-icon-open':'el-icon-turn-off'" circle></el-button>
+                        </div>
                     </el-col>
                 </el-row>
                 <el-row class="content-grid">
@@ -44,13 +47,20 @@
                 <p :class="['colorChange',{on:index===idx}]" >{{item.name}}</p>
             </div>
         </div>
+        <div v-if="calcOpened" class="calc">
+            <Calculator></Calculator>
+        </div>
 	</div>
     </div>
 </template>
 <script>
+import Calculator from '../components/Calculator.vue'
+
 export default {
+    components:{Calculator},
     data(){
         return {
+            calcOpened:false,
             idx:1,
             items:[{
 					cls:"home",
@@ -75,6 +85,9 @@ export default {
         })
     },
     methods:{
+        switchCalc(){
+            this.calcOpened = !this.calcOpened
+        },
         getNextQuestion(){
             this.userAnwser=''
             this.completed=false
@@ -151,6 +164,7 @@ export default {
 .footer div{
     flex: 1;
     font-size: 16px;
+    width: 100%;
 }
 .footer div img{
     width: 30px;
@@ -162,5 +176,13 @@ export default {
 }
 .footer .on{
     color: red;
+}
+.calc {
+    position: fixed;
+    left: 0;
+    bottom:0;
+}
+.tools-btn{
+    float: right;
 }
 </style>

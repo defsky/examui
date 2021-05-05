@@ -55,20 +55,22 @@ const Sub1Datas = Sub1DbFiles.keys().map(obj => {
 
 Sub1Datas.forEach(row => {
   row.data.parts.forEach((part,n)=>{
-    switch(n){
-      case 0:
-        subject1.type1.questions = subject1.type1.questions.concat(part.questions)
-      break;
-      case 1:
-        subject1.type2.questions = subject1.type2.questions.concat(part.questions)
-      break;
-      case 2:
-        subject1.type3.questions = subject1.type3.questions.concat(part.questions)
-      break;
-      case 3:
-        subject1.type4.questions = subject1.type4.questions.concat(part.questions)
-      break;
-    }
+    part.questions.forEach((q,i)=>{
+      switch(q.type){
+        case "1":
+          subject1.type1.questions.push(q)
+        break;
+        case "2":
+          subject1.type2.questions.push(q)
+        break;
+        case "3":
+          subject1.type3.questions.push(q)
+        break;
+        case "4":
+          subject1.type4.questions.push(q)
+        break;
+      }
+    })
   })
 });
 
@@ -77,22 +79,42 @@ const Sub2Datas = Sub2DbFiles.keys().map(obj => {
   return Sub2DbFiles(obj)
 }, {})
 
+// Sub2Datas.forEach(row => {
+//   row.data.parts.forEach((part,n)=>{
+//     switch(n){
+//       case 0:
+//         subject2.type1.questions = subject2.type1.questions.concat(part.questions)
+//       break;
+//       case 1:
+//         subject2.type2.questions = subject2.type2.questions.concat(part.questions)
+//       break;
+//       case 2:
+//         subject2.type3.questions = subject2.type3.questions.concat(part.questions)
+//       break;
+//       case 3:
+//         subject2.type4.questions = subject2.type4.questions.concat(part.questions)
+//       break;
+//     }
+//   })
+// });
 Sub2Datas.forEach(row => {
   row.data.parts.forEach((part,n)=>{
-    switch(n){
-      case 0:
-        subject2.type1.questions = subject2.type1.questions.concat(part.questions)
-      break;
-      case 1:
-        subject2.type2.questions = subject2.type2.questions.concat(part.questions)
-      break;
-      case 2:
-        subject2.type3.questions = subject2.type3.questions.concat(part.questions)
-      break;
-      case 3:
-        subject2.type4.questions = subject2.type4.questions.concat(part.questions)
-      break;
-    }
+    part.questions.forEach((q,i)=>{
+      switch(q.type){
+        case "1":
+          subject2.type1.questions.push(q)
+        break;
+        case "2":
+          subject2.type2.questions.push(q)
+        break;
+        case "3":
+          subject2.type3.questions.push(q)
+        break;
+        case "4":
+          subject2.type4.questions.push(q)
+        break;
+      }
+    })
   })
 });
 

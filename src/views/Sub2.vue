@@ -17,7 +17,7 @@
                 </el-row>
                 <el-row>
                     <el-col>
-                        <el-button class="nav-btn" type="primary" @click="type3">判断题</el-button>
+                        <el-button class="nav-btn" type="primary" @click="type3" disabled>判断题</el-button>
                     </el-col>
                 </el-row>
             </el-col>
